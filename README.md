@@ -10,7 +10,6 @@ Live at: https://sohamnigh.github.io
 
 - `index.html` — content
 - `styles.css` — theme/layout
-- `script.js` — commit fade-in on scroll + live GitHub repos fetch (with a
-  fallback if the API is rate-limited/offline)
-- `assets/` — résumé PDF
+- `script.js` — commit fade-in on scroll + live GitHub repos fetch
+- `assets/` — resume PDF
 - `.github/workflows/deploy.yml` — Pages deploy on push to `main`
