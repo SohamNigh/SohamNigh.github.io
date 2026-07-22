@@ -1,2 +1,16 @@
-# personal_website
-Personal Website :)
+# soham.github.io
+
+Personal site, built as a stylized `git log --stat` of my career — each job
+and project rendered as a commit. Plain HTML/CSS/JS, no build step, deployed
+via GitHub Actions to GitHub Pages.
+
+Live at: https://sohamnigh.github.io
+
+## Structure
+
+- `index.html` — content
+- `styles.css` — theme/layout
+- `script.js` — commit fade-in on scroll + live GitHub repos fetch (with a
+  fallback if the API is rate-limited/offline)
+- `assets/` — résumé PDF
+- `.github/workflows/deploy.yml` — Pages deploy on push to `main`
