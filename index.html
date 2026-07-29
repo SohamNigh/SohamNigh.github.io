@@ -4,188 +4,212 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soham Nighojkar — Software Engineer</title>
-  <meta name="description" content="Soham Nighojkar — software engineer focused on backend systems, distributed infrastructure, and observability. Resume and projects, rendered as a git log." />
+  <meta name="description" content="Soham Nighojkar — Software engineer focused on backend systems, distributed infrastructure, and machine learning. Computer Science at Northeastern University." />
+  <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Applied before first paint so a stored theme choice never flashes.
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 </head>
 <body>
 
-  <header class="term-window">
-    <div class="term-titlebar" aria-hidden="true">
-      <span class="dot dot-red"></span>
-      <span class="dot dot-yellow"></span>
-      <span class="dot dot-green"></span>
-      <span class="term-title">soham@career: ~</span>
-    </div>
-    <div class="term-body">
-      <h1 class="prompt-line">
-        <span class="prompt-sign">$</span> git log --stat --author=<span class="str">"soham-nighojkar"</span><span class="cursor" aria-hidden="true"></span>
-      </h1>
-      <p class="term-subtitle">Software Engineer — systems &amp; infrastructure. Northeastern CS, class of 2028.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="masthead-id">
+        <h1>Soham Nighojkar</h1>
+        <p class="role">Software Engineer</p>
+        <nav class="id-links" aria-label="Contact and profiles">
+          <a href="mailto:sohamnigh@gmail.com">sohamnigh@gmail.com</a>
+          <a href="https://github.com/SohamNigh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/soham-nighojkar" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/Soham_Nighojkar_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </nav>
+      </div>
+      <span class="avatar">
+        <img src="pfp.jpg" alt="Soham Nighojkar" width="1160" height="880" decoding="async" />
+      </span>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
+        <span data-theme-label>Theme</span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section id="log" aria-label="Career commit history">
+  <main id="main" class="wrap">
 
-      <details class="commit" open>
-        <summary>
-          <span class="commit-hash">commit 7a3f9c1</span>
-          <span class="commit-refs">(HEAD -&gt; main, origin/main)</span>
-        </summary>
-        <div class="commit-body">
-          <dl class="commit-meta">
-            <dt>Author:</dt><dd>Soham Nighojkar &lt;sohamnigh@gmail.com&gt;</dd>
-            <dt>Date:</dt><dd>Jan 2026 – Jun 2026</dd>
-          </dl>
-          <p class="commit-msg">feat(philips): redesign NATS JetStream advisory subscriptions</p>
-          <ul class="diff">
-            <li><span class="plus">+</span> 100% audit trace coverage across 10+ patient monitoring microservices via message subject filtering</li>
-            <li><span class="plus">+</span> self-registering Prometheus metrics system in C# (thread-safe singleton, idempotent dedup) for 75+ NuGet packages</li>
-            <li><span class="plus">+</span> consolidated 18+ fragmented Git workflows across 15 repos into one CI/CD pipeline — 16% faster deploys</li>
-            <li><span class="plus">+</span> real-time patient data change detection across 1,000+ devices via Kubernetes (Helm) on NATS infra</li>
-          </ul>
-          <p class="commit-stat">4 files changed
-            <span class="badge">C#</span><span class="badge">Kubernetes</span><span class="badge">NATS</span><span class="badge">Prometheus</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="commit" open>
-        <summary>
-          <span class="commit-hash">commit 2b88e40</span>
-        </summary>
-        <div class="commit-body">
-          <dl class="commit-meta">
-            <dt>Author:</dt><dd>Soham Nighojkar &lt;sohamnigh@gmail.com&gt;</dd>
-            <dt>Date:</dt><dd>Jun 2025 – Aug 2025</dd>
-          </dl>
-          <p class="commit-msg">feat(observe-ai): token-bucket rate limiter + Kafka transcription pipeline</p>
-          <ul class="diff">
-            <li><span class="plus">+</span> reduced client-side timeouts 58% with a token-bucket limiter (local cache, Redis/Redisson fallback) at 25,000+ req/day</li>
-            <li><span class="plus">+</span> maintained accurate state across 1,000+ concurrent WebSocket connections, cutting stale connections 22%</li>
-            <li><span class="plus">+</span> sub-3-second transcription latency across 5,000+ calls, streaming WebSocket audio through Kafka to Deepgram STT</li>
-          </ul>
-          <p class="commit-stat">3 files changed
-            <span class="badge">Java</span><span class="badge">Kafka</span><span class="badge">Redis</span><span class="badge">WebSockets</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="commit" open>
-        <summary>
-          <span class="commit-hash">commit c4d1a02</span>
-        </summary>
-        <div class="commit-body">
-          <dl class="commit-meta">
-            <dt>Author:</dt><dd>Soham Nighojkar &lt;sohamnigh@gmail.com&gt;</dd>
-            <dt>Date:</dt><dd>personal project</dd>
-          </dl>
-          <p class="commit-msg">feat(signal-trading-engine): full-stack quant research platform</p>
-          <ul class="diff">
-            <li><span class="plus">+</span> FastAPI + Redis/RQ async workers running configurable multi-ticker backtests over 20-year lookbacks</li>
-            <li><span class="plus">+</span> statistical engine computing pairwise cointegration and correlation across up to 200 ticker pairs</li>
-            <li><span class="plus">+</span> Dockerized GitHub Actions pipeline, 66+ tests per merge gating signal-logic regressions</li>
-            <li><span class="plus">+</span> Next.js frontend rendering ranked signal tables and per-pair equity curves (Recharts)</li>
-          </ul>
-          <p class="commit-stat">4 files changed
-            <span class="badge">Python</span><span class="badge">FastAPI</span><span class="badge">TypeScript</span><span class="badge">PostgreSQL</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="commit" open>
-        <summary>
-          <span class="commit-hash">commit 9e7f234</span>
-        </summary>
-        <div class="commit-body">
-          <dl class="commit-meta">
-            <dt>Author:</dt><dd>Soham Nighojkar &lt;sohamnigh@gmail.com&gt;</dd>
-            <dt>Date:</dt><dd>personal project</dd>
-          </dl>
-          <p class="commit-msg">feat(crypto-anomaly-detector): real-time market manipulation pipeline</p>
-          <ul class="diff">
-            <li><span class="plus">+</span> sub-100ms flagging for 99% of requests at 300+ msgs/sec (Kafka + PySpark Structured Streaming)</li>
-            <li><span class="plus">+</span> nightly Airflow DAG auto-promotes only non-regressing models (within 0.01 F1); weekly drift monitor</li>
-            <li><span class="plus">+</span> 3-layer PyTorch MLP (128/64 hidden units, class-weighted BCE), threshold tuned for max F1 under 5% FP cap</li>
-          </ul>
-          <p class="commit-stat">4 files changed
-            <span class="badge">Python</span><span class="badge">Kafka</span><span class="badge">Airflow</span><span class="badge">PyTorch</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="commit">
-        <summary>
-          <span class="commit-hash">commit 0000001</span>
-          <span class="commit-refs">(root-commit)</span>
-        </summary>
-        <div class="commit-body">
-          <dl class="commit-meta">
-            <dt>Author:</dt><dd>Soham Nighojkar &lt;sohamnigh@gmail.com&gt;</dd>
-            <dt>Date:</dt><dd>root-commit</dd>
-          </dl>
-          <p class="commit-msg">init: enroll @ Northeastern University, B.S. Computer Science</p>
-          <ul class="diff">
-            <li><span class="plus">+</span> expected May 2028, GPA 3.8/4.0, Khoury College Dean's List</li>
-            <li><span class="plus">+</span> coursework: algorithms &amp; data structures, computer systems, theory of computation, foundations of cybersecurity</li>
-            <li><span class="plus">+</span> activities: TAMID Group Tech Consulting, NU Impact, Northeastern Club Basketball</li>
-          </ul>
-        </div>
-      </details>
-
-    </section>
-
-    <section id="skills" aria-label="Skills">
-      <h2 class="cmd-heading"><span class="prompt-sign">$</span> cat SKILLS.md</h2>
-      <p class="skills-note">// self-reported, for flavor — not computed from real repo analysis</p>
-
-      <div class="lang-bar" role="img" aria-label="Illustrative skill emphasis: Java 24%, Python 22%, TypeScript 16%, JavaScript 12%, C# 12%, SQL 8%, C++ 6%">
-        <span class="lang-seg" style="--w:24; background:var(--series-1)" title="Java — 24%"></span>
-        <span class="lang-seg" style="--w:22; background:var(--series-2)" title="Python — 22%"></span>
-        <span class="lang-seg" style="--w:16; background:var(--series-3)" title="TypeScript — 16%"></span>
-        <span class="lang-seg" style="--w:12; background:var(--series-4)" title="JavaScript — 12%"></span>
-        <span class="lang-seg" style="--w:12; background:var(--series-5)" title="C# — 12%"></span>
-        <span class="lang-seg" style="--w:8;  background:var(--series-6)" title="SQL — 8%"></span>
-        <span class="lang-seg" style="--w:6;  background:var(--series-7)" title="C++ — 6%"></span>
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-label">About</h2>
+      <div class="prose">
+        <p>Hey! I'm Soham, a Computer Science student at Northeastern University. My background lies in backend systems and distributed infrastructure. Whether it be software engineering opportunities, innovative projects, or collaborative work feel free to get in touch!</p>
       </div>
-      <ul class="lang-legend">
-        <li><span class="swatch" style="background:var(--series-1)"></span>Java <em>24%</em></li>
-        <li><span class="swatch" style="background:var(--series-2)"></span>Python <em>22%</em></li>
-        <li><span class="swatch" style="background:var(--series-3)"></span>TypeScript <em>16%</em></li>
-        <li><span class="swatch" style="background:var(--series-4)"></span>JavaScript <em>12%</em></li>
-        <li><span class="swatch" style="background:var(--series-5)"></span>C# <em>12%</em></li>
-        <li><span class="swatch" style="background:var(--series-6)"></span>SQL <em>8%</em></li>
-        <li><span class="swatch" style="background:var(--series-7)"></span>C++ <em>6%</em></li>
+
+      <h3 class="interests-label">Off the clock</h3>
+      <ul class="interests">
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M4.6 6.8c4 2.6 10.8 2.6 14.8 0"/><path d="M4.6 17.2c4-2.6 10.8-2.6 14.8 0"/></svg>
+          </span>
+          <span class="interest-name">Basketball</span>
+        </li>
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3.5 9v6"/><path d="M20.5 9v6"/><path d="M6.5 12h11"/></svg>
+          </span>
+          <span class="interest-name">Working Out</span>
+        </li>
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5 8 9h8z"/><path d="M12 7.5 6.5 14h11z"/><path d="M12 11.5 5 17.5h14z"/><path d="M12 17.5V21"/></svg>
+          </span>
+          <span class="interest-name">Nature</span>
+        </li>
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M9.2 3.5v17"/><path d="M14.8 3.5v17"/><path d="M3.5 9.2h17"/><path d="M3.5 14.8h17"/></svg>
+          </span>
+          <span class="interest-name">Brain Teasers</span>
+        </li>
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M10.5 3 12.4 8.1 17.5 10l-5.1 1.9L10.5 17l-1.9-5.1L3.5 10l5.1-1.9z"/><path d="M18 14.5l.75 1.9 1.9.75-1.9.75-.75 1.9-.75-1.9-1.9-.75 1.9-.75z"/></svg>
+          </span>
+          <span class="interest-name">Anime</span>
+        </li>
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><rect x="2.5" y="7" width="19" height="10.5" rx="4.5"/><path d="M7 10.5v3.5"/><path d="M5.25 12.25h3.5"/><path d="M15.5 11.75h.01"/><path d="M18 11.75h.01"/><path d="M16.75 13.75h.01"/></svg>
+          </span>
+          <span class="interest-name">Gaming</span>
+        </li>
+        <li class="interest">
+          <span class="interest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 11.5h17a8.5 8.5 0 0 1-17 0z"/><path d="M5.5 19.5h13"/><path d="M9.5 4.2c-1 1.2 1 2.2 0 3.4"/><path d="M14 3.4c-1 1.2 1 2.2 0 3.4"/></svg>
+          </span>
+          <span class="interest-name">Foodie</span>
+        </li>
       </ul>
-
-      <div class="tag-cloud">
-        <span class="badge">Spring Boot</span><span class="badge">.NET</span><span class="badge">Node.js</span><span class="badge">FastAPI</span>
-        <span class="badge">PyTorch</span><span class="badge">Pandas</span><span class="badge">NumPy</span><span class="badge">Apache Spark</span>
-        <span class="badge">AWS</span><span class="badge">Docker</span><span class="badge">Kubernetes</span><span class="badge">Kafka</span>
-        <span class="badge">Apache Airflow</span><span class="badge">NATS</span><span class="badge">Prometheus</span><span class="badge">Grafana</span>
-        <span class="badge">CI/CD</span><span class="badge">REST APIs</span>
-      </div>
     </section>
 
-    <section id="projects" aria-label="Projects">
-      <h2 class="cmd-heading"><span class="prompt-sign">$</span> gh repo list SohamNigh --limit 6</h2>
-      <div id="projects-grid" class="projects-grid">
-        <p class="projects-status">loading repositories…</p>
-      </div>
-      <noscript><p class="projects-status">Enable JavaScript to load live repositories, or visit <a href="https://github.com/SohamNigh">github.com/SohamNigh</a> directly.</p></noscript>
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading" class="section-label">Experience</h2>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3 class="entry-title">Software Engineering Intern</h3>
+          <p class="entry-org">Philips</p>
+          <p class="entry-meta"><span class="entry-date">January 2026 – June 2026</span><span class="entry-place">Cambridge, MA</span></p>
+        </header>
+        <ul class="points">
+          <li>Achieved 100% audit trace coverage across 10+ patient monitoring microservices by redesigning NATS JetStream's advisory subscription model with message subject filtering to catch previously missing logs.</li>
+          <li>Eliminated manual metric registration across 20+ microservices by building a self-registering Prometheus system in C# (thread-safe singleton, idempotent deduplication), letting 75+ NuGet packages register metrics independently.</li>
+          <li>Cut deployment time 16% and removed manual version bumping by consolidating 18+ fragmented Git workflows across 15 repositories into one CI/CD pipeline with release-please versioning and automated Docker tagging.</li>
+          <li>Enabled real-time detection of changes to patient health data across 1,000+ connected devices by deploying and monitoring Kubernetes clusters (Helm) on Philips HealthSuite's NATS messaging infrastructure.</li>
+        </ul>
+        <p class="stack"><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">Kubernetes</span><span class="tag">NATS</span><span class="tag">Prometheus</span><span class="tag">CI/CD</span></p>
+      </article>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3 class="entry-title">Software Engineering Intern</h3>
+          <p class="entry-org">Observe.ai</p>
+          <p class="entry-meta"><span class="entry-date">June 2025 – August 2025</span><span class="entry-place">Redwood Shores, CA</span></p>
+        </header>
+        <ul class="points">
+          <li>Reduced client-side timeouts 58% by building a token-bucket rate limiter with a local cache and a Redis (Redisson) fallback, sustaining 25,000+ daily REST/WebSocket requests.</li>
+          <li>Maintained accurate state across 1,000+ concurrent WebSocket connections while reducing stale connections 22%, via a connection-limiting layer using a handshake interceptor and atomic Redis counter.</li>
+          <li>Delivered sub-3-second transcription latency across 5,000+ calls by engineering a Kafka pipeline that streamed WebSocket audio to Deepgram STT and fanned transcripts out to multiple downstream consumers.</li>
+        </ul>
+        <p class="stack"><span class="tag">Java</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">WebSockets</span></p>
+      </article>
     </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-label">Projects</h2>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3 class="entry-title">Signal Trading Engine</h3>
+          <p class="entry-org">Full-stack quantitative research platform</p>
+        </header>
+        <ul class="points">
+          <li>Built a full-stack quant research platform (FastAPI + Redis/RQ async workers) running configurable multi-ticker backtests over 20-year lookbacks, offloading heavy computation off the request path to keep API latency low.</li>
+          <li>Powered the platform's signals with a statistical engine computing pairwise cointegration and correlation across up to 200 ticker pairs, gated by a Dockerized GitHub Actions pipeline running 66+ tests per merge to catch signal logic regressions.</li>
+          <li>Developed a TypeScript/Next.js frontend rendering ranked signal tables and per-pair equity curves that overlay train and out-of-sample performance (Recharts), validated client-side against the backend's parameter bounds.</li>
+        </ul>
+        <p class="stack"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">Pandas</span><span class="tag">Statsmodels</span></p>
+      </article>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3 class="entry-title">Crypto Anomaly Detector</h3>
+          <p class="entry-org">Real-time market manipulation pipeline</p>
+        </header>
+        <ul class="points">
+          <li>Flagged suspicious trades in under 100ms for 99% of requests by designing a real-time market manipulation pipeline (Kafka, PySpark Structured Streaming, FastAPI) that sustained 300+ messages per second.</li>
+          <li>Automated model retraining end-to-end with an Apache Airflow nightly DAG that promotes only non-regressing models (within 0.01 F1), plus a weekly drift monitor flagging feature distribution shifts within 7 days.</li>
+          <li>Designed a 3-layer PyTorch MLP (128 and 64 hidden units, class-weighted BCE) scoring four features, including a small-trade ratio that flags wash trading, with the alert threshold tuned for max F1 under a 5% false-positive cap.</li>
+        </ul>
+        <p class="stack"><span class="tag">Python</span><span class="tag">Apache Kafka</span><span class="tag">Apache Airflow</span><span class="tag">FastAPI</span><span class="tag">PySpark</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Docker</span></p>
+      </article>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading" class="section-label">Technical Skills</h2>
+
+      <dl class="skill-matrix">
+        <dt>Languages</dt>
+        <dd>
+          <span class="tag">Java</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">C#</span><span class="tag">C++</span>
+        </dd>
+
+        <dt>Frameworks</dt>
+        <dd>
+          <span class="tag">Spring Boot</span><span class="tag">.NET</span><span class="tag">Node.js</span><span class="tag">FastAPI</span>
+        </dd>
+
+        <dt>Libraries</dt>
+        <dd>
+          <span class="tag">PyTorch</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Apache Spark</span>
+        </dd>
+
+        <dt>Tools &amp; Platforms</dt>
+        <dd>
+          <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Kafka</span><span class="tag">Apache Airflow</span><span class="tag">NATS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Git</span><span class="tag">CI/CD</span><span class="tag">REST APIs</span>
+        </dd>
+
+        <dt>Testing</dt>
+        <dd>
+          <span class="tag">Unit Testing</span><span class="tag">End-to-End Testing</span>
+        </dd>
+      </dl>
+    </section>
+
+    <section id="repositories" aria-labelledby="repositories-heading">
+      <h2 id="repositories-heading" class="section-label">Repositories</h2>
+      <div id="repositories-grid" class="repo-grid">
+        <p class="repo-status">Loading repositories…</p>
+      </div>
+      <noscript><p class="repo-status">Enable JavaScript to load live repositories, or visit <a href="https://github.com/SohamNigh">github.com/SohamNigh</a> directly.</p></noscript>
+    </section>
+
   </main>
 
   <footer>
-    <p class="prompt-line"><span class="prompt-sign">$</span> whoami</p>
-    <p class="footer-links">
-      Soham Nighojkar
-      · <a href="mailto:sohamnigh@gmail.com">email</a>
-      · <a href="https://github.com/SohamNigh" target="_blank" rel="noopener">github</a>
-      · <a href="https://linkedin.com/in/soham-nighojkar" target="_blank" rel="noopener">linkedin</a>
-      · <a href="assets/Soham_Nighojkar_Resume.pdf" target="_blank" rel="noopener">download resume</a>
-    </p>
+    <div class="wrap footer-inner">
+      <p class="footer-name">Soham Nighojkar</p>
+      <nav class="footer-links" aria-label="Contact and profiles">
+        <a href="mailto:sohamnigh@gmail.com">Email</a>
+        <a href="https://github.com/SohamNigh" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/soham-nighojkar" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/Soham_Nighojkar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
