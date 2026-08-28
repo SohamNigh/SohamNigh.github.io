@@ -29,6 +29,7 @@
           <a href="mailto:sohamnigh@gmail.com">sohamnigh@gmail.com</a>
           <a href="https://github.com/SohamNigh" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/soham-nighojkar" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/Soham_Nighojkar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         </nav>
       </div>
       <span class="avatar">
@@ -108,7 +109,7 @@
           <li>Achieved 100% audit trace coverage across 10+ patient monitoring microservices by redesigning NATS JetStream's advisory subscription model with message subject filtering to catch previously missing logs.</li>
           <li>Eliminated manual metric registration across 20+ microservices by building a self-registering Prometheus system in C# (thread-safe singleton, idempotent deduplication), letting 75+ NuGet packages register metrics independently.</li>
           <li>Cut deployment time 16% and removed manual version bumping by consolidating 18+ fragmented Git workflows across 15 repositories into one CI/CD pipeline with release-please versioning and automated Docker tagging.</li>
-          <li>Enabled real-time detection of changes to patient health data across 1,000+ connected devices by deploying and monitoring Kubernetes clusters (Helm) on Philips HealthSuite's NATS messaging infrastructure.</li>
+          <li>Delivered real-time change detection on patient health data from 1,000+ connected devices by deploying Helm-managed Kubernetes clusters onto Philips HealthSuite's NATS messaging infrastructure.</li>
         </ul>
         <p class="stack"><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">Kubernetes</span><span class="tag">NATS</span><span class="tag">Prometheus</span><span class="tag">CI/CD</span></p>
       </article>
@@ -120,11 +121,24 @@
           <p class="entry-meta"><span class="entry-date">June 2025 – August 2025</span><span class="entry-place">Redwood Shores, CA</span></p>
         </header>
         <ul class="points">
-          <li>Reduced client-side timeouts 58% by building a token-bucket rate limiter with a local cache and a Redis (Redisson) fallback, sustaining 25,000+ daily REST/WebSocket requests.</li>
-          <li>Maintained accurate state across 1,000+ concurrent WebSocket connections while reducing stale connections 22%, via a connection-limiting layer using a handshake interceptor and atomic Redis counter.</li>
-          <li>Delivered sub-3-second transcription latency across 5,000+ calls by engineering a Kafka pipeline that streamed WebSocket audio to Deepgram STT and fanned transcripts out to multiple downstream consumers.</li>
+          <li>Reduced client-side timeouts 58% by capping per-client request rates on a 10K request/second internal Spring Boot API with a token-bucket limiter (local cache, Redis/Redisson fallback), so excess requests failed fast instead of queueing past their timeout.</li>
+          <li>Cut stale WebSocket connections 22% across 1,000+ concurrent sessions by rejecting excess connections during the handshake instead of after accepting them, tracking live counts with an atomic Redis counter shared across replicas.</li>
+          <li>Delivered sub-3-second transcription latency across 5,000+ calls by streaming live WebSocket audio through a Kafka pipeline to Deepgram STT, fanning transcripts out to multiple downstream consumers off a single stream.</li>
         </ul>
-        <p class="stack"><span class="tag">Java</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">WebSockets</span></p>
+        <p class="stack"><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">WebSockets</span></p>
+      </article>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3 class="entry-title">Software Engineering Intern</h3>
+          <p class="entry-org">Trillo Inc.</p>
+          <p class="entry-meta"><span class="entry-date">June 2023 – August 2023</span><span class="entry-place">San Ramon, CA</span></p>
+        </header>
+        <ul class="points">
+          <li>Accelerated document processing 84% by building Vertex AI pipelines on Google Cloud that parsed PDFs with PyMuPDF and ran named entity recognition to extract structured fields at 92% accuracy.</li>
+          <li>Held read latency under 150ms and reduced backend load 27% by building a document store on Google Cloud Blob Storage with indexed queries and batched write operations.</li>
+        </ul>
+        <p class="stack"><span class="tag">Python</span><span class="tag">Vertex AI</span><span class="tag">Google Cloud</span></p>
       </article>
     </section>
 
@@ -133,28 +147,45 @@
 
       <article class="entry">
         <header class="entry-head">
-          <h3 class="entry-title">Signal Trading Engine</h3>
-          <p class="entry-org">Full-stack quantitative research platform</p>
+          <h3 class="entry-title">Mini Inference Serving System</h3>
+          <p class="entry-org">Go + C++ gRPC inference server</p>
+          <p class="entry-meta"><span class="entry-date">August 2026 – Present</span></p>
         </header>
         <ul class="points">
-          <li>Built a full-stack quant research platform (FastAPI + Redis/RQ async workers) running configurable multi-ticker backtests over 20-year lookbacks, offloading heavy computation off the request path to keep API latency low.</li>
-          <li>Powered the platform's signals with a statistical engine computing pairwise cointegration and correlation across up to 200 ticker pairs, gated by a Dockerized GitHub Actions pipeline running 66+ tests per merge to catch signal logic regressions.</li>
-          <li>Developed a TypeScript/Next.js frontend rendering ranked signal tables and per-pair equity curves that overlay train and out-of-sample performance (Recharts), validated client-side against the backend's parameter bounds.</li>
+          <li>Served model inference over gRPC from a Go request layer fronting a C++ compute engine, cutting per-request backend calls 75% under concurrent load via dynamic batching (goroutines/channels, size-8 or 10ms window) with context deadlines preserving per-request timeouts.</li>
+          <li>Achieved 3ms median CPU latency per batch of 8 by hand-writing matmul, ReLU, and softmax kernels in C++ with no ML framework, loading weights from a custom binary export of a 784-128-10 network trained in NumPy.</li>
         </ul>
-        <p class="stack"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">Pandas</span><span class="tag">Statsmodels</span></p>
+        <p class="stack"><span class="tag">Go</span><span class="tag">C++</span><span class="tag">gRPC</span><span class="tag">Protocol Buffers</span><span class="tag">Prometheus</span></p>
       </article>
 
       <article class="entry">
         <header class="entry-head">
           <h3 class="entry-title">Crypto Anomaly Detector</h3>
           <p class="entry-org">Real-time market manipulation pipeline</p>
+          <p class="entry-meta"><span class="entry-date">June 2026 – August 2026</span></p>
         </header>
         <ul class="points">
-          <li>Flagged suspicious trades in under 100ms for 99% of requests by designing a real-time market manipulation pipeline (Kafka, PySpark Structured Streaming, FastAPI) that sustained 300+ messages per second.</li>
-          <li>Automated model retraining end-to-end with an Apache Airflow nightly DAG that promotes only non-regressing models (within 0.01 F1), plus a weekly drift monitor flagging feature distribution shifts within 7 days.</li>
-          <li>Designed a 3-layer PyTorch MLP (128 and 64 hidden units, class-weighted BCE) scoring four features, including a small-trade ratio that flags wash trading, with the alert threshold tuned for max F1 under a 5% false-positive cap.</li>
+          <li>Flagged Binance wash trading in real time by streaming from a multi-threaded producer through 5 Kafka (KRaft) topics into PySpark Structured Streaming, deriving four rolling features served over FastAPI.</li>
+          <li>Tuned the alert threshold with a precision-recall sweep maximizing F1 under a 5% false-positive cap on a 3-layer PyTorch MLP with class-weighted BCE, retrained by an Airflow DAG that promotes only non-regressing models (within 0.01 F1) and flags feature drift weekly.</li>
         </ul>
-        <p class="stack"><span class="tag">Python</span><span class="tag">Apache Kafka</span><span class="tag">Apache Airflow</span><span class="tag">FastAPI</span><span class="tag">PySpark</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Docker</span></p>
+        <p class="stack"><span class="tag">Python</span><span class="tag">Apache Kafka</span><span class="tag">Apache Airflow</span><span class="tag">FastAPI</span><span class="tag">PySpark</span><span class="tag">PyTorch</span></p>
+      </article>
+    </section>
+
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading" class="section-label">Education</h2>
+
+      <article class="entry">
+        <header class="entry-head">
+          <h3 class="entry-title">Northeastern University</h3>
+          <p class="entry-org">Candidate for B.S. in Computer Science</p>
+          <p class="entry-meta"><span class="entry-date">Expected May 2028</span><span class="entry-place">GPA: 3.8/4.0</span></p>
+        </header>
+        <ul class="points">
+          <li><strong>Honors:</strong> Khoury College Dean's List</li>
+          <li><strong>Relevant Coursework:</strong> Computer Systems, Algorithms &amp; Data Structures, Object-Oriented Design, Theory of Computation, Logic and Computation, Discrete Structures</li>
+          <li><strong>Activities:</strong> TAMID Group Tech Consulting, NU Impact, Northeastern Club Basketball</li>
+        </ul>
       </article>
     </section>
 
@@ -164,27 +195,22 @@
       <dl class="skill-matrix">
         <dt>Languages</dt>
         <dd>
-          <span class="tag">Java</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">C#</span><span class="tag">C++</span>
+          <span class="tag">Python</span><span class="tag">Go</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">C++</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span>
         </dd>
 
-        <dt>Frameworks</dt>
+        <dt>Infrastructure &amp; Data</dt>
         <dd>
-          <span class="tag">Spring Boot</span><span class="tag">.NET</span><span class="tag">Node.js</span><span class="tag">FastAPI</span>
+          <span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">Kubernetes (Helm)</span><span class="tag">gRPC/Protobuf</span><span class="tag">Kafka</span><span class="tag">NATS</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Airflow</span><span class="tag">Spark</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
         </dd>
 
-        <dt>Libraries</dt>
+        <dt>Frameworks &amp; Libraries</dt>
         <dd>
-          <span class="tag">PyTorch</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Apache Spark</span>
+          <span class="tag">FastAPI</span><span class="tag">Spring Boot</span><span class="tag">.NET</span><span class="tag">Node.js</span><span class="tag">PyTorch</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
         </dd>
 
-        <dt>Tools &amp; Platforms</dt>
+        <dt>Systems</dt>
         <dd>
-          <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Kafka</span><span class="tag">Apache Airflow</span><span class="tag">NATS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Git</span><span class="tag">CI/CD</span><span class="tag">REST APIs</span>
-        </dd>
-
-        <dt>Testing</dt>
-        <dd>
-          <span class="tag">Unit Testing</span><span class="tag">End-to-End Testing</span>
+          <span class="tag">Distributed Systems</span><span class="tag">Event-Driven Architecture</span><span class="tag">Streaming Pipelines</span><span class="tag">Concurrency</span><span class="tag">Observability</span><span class="tag">CI/CD</span>
         </dd>
       </dl>
     </section>
@@ -206,6 +232,7 @@
         <a href="mailto:sohamnigh@gmail.com">Email</a>
         <a href="https://github.com/SohamNigh" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/soham-nighojkar" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/Soham_Nighojkar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
     </div>
   </footer>
